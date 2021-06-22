@@ -1,3 +1,5 @@
+Check out my Shopify apps: [https://apps.shopify.com/partners/william-belk](https://apps.shopify.com/partners/william-belk)
+
 ## Overview
 
 This is a simple Shopify theme minifier and module router that follows existing `.liquid` concepts like `include`, does not use Webpack. Changed files/modules will be watched and built automatically. This does not require a proxy and will play nicely with Themekit.
