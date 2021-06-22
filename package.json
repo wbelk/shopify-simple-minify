@@ -1,6 +1,6 @@
 {
   "name": "@wbelk/shopify-simple-minify",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Simple minify framework for Shopify themes.",
   "license": "MIT",
   "repository": {
@@ -29,7 +29,9 @@
     "shopify",
     "compile",
     "minify",
+    "minifier",
     "transpile",
+    "transpiler",
     "babel",
     "theme"
   ]
