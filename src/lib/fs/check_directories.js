@@ -39,8 +39,8 @@ function checkDirectories (cb) {
   console.log(dashes + '\n~~ your repo root has ' + md)
   hasTwoDirectories()
   console.log(`~~ ./${md}/modules and ./${md}/source_theme directories exist`)
-  hasThemeDirectories()
-  console.log(`~~ ./${md}/source_theme has all the Shopify theme directories\n${dashes}`)
+  // hasThemeDirectories()
+  // console.log(`~~ ./${md}/source_theme has all the Shopify theme directories\n${dashes}`)
   cb()
 }
 

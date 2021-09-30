@@ -40,6 +40,8 @@ function loopTags (fileName, str, tagName, matchedTags, cb) {
 
     let replaceTag = new RegExp(`</*${tagName}>`, 'g')
     let tagContents = tag.replace(replaceTag, '')
+    console.log('replaceTag', replaceTag)
+    console.log('tagContents', tagContents)
 
     MinifyByTag[tagName](fileName, tagContents, (res) => {
       let newMinifiedTag = `<${tagName}>${res}</${tagName}>`

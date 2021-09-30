@@ -41,7 +41,7 @@ npm install --save-dev @wbelk/shopify-simple-minify
 
 Add the directory `minify_modules` to the root fo your project.
 
-Add the sub directories `./minify_modules/modules` and `./minify_modules/theme`
+Add the sub directories `./minify_modules/modules` and `./minify_modules/source_theme`
 
 Copy your existing Shopify theme to `./minify_modules/source_theme`
 

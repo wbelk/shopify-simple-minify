@@ -99,6 +99,13 @@ function minifyAssets () {
   var remaining = shopifyDirectories.length
   var position = 0
 
+  const checkFinished = () => {
+    if (!--remaining) return
+
+    position++
+    loop()
+  }
+
   const loop = () => {
     let dir = shopifyDirectories[position]
 
@@ -107,16 +114,16 @@ function minifyAssets () {
     if (!fs.existsSync(rootDirPath)) fs.mkdirSync(rootDirPath)
 
     let fileNames = getFileNamesInDirectory(`./${md}/source_theme/${dir}`)
+    
+    if (!fileNames) return checkFinished()
+    
     fileNames = extractFileNames(dir, fileNames)
 
     // console.log('dir', dir, 'fileNames', fileNames, '\n\n')
 
     loopFileNames(dir, fileNames)
 
-    if (!--remaining) return
-
-    position++
-    loop()
+    checkFinished()
   }
 
   loop()
