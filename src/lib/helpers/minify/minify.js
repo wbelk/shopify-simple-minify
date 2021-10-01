@@ -26,6 +26,7 @@ function minify (fileName, str, cb) {
 
   suffix = suffix[0].replace('.', '')
   if (suffix === 'liquid') suffix = 'html'
+  if (fileName.match(/\.css\.liquid/)) suffix = 'css'
 
   if (!minifyByType[suffix]) return cb(str)
 

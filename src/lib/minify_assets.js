@@ -37,7 +37,7 @@ function loopAllowedFiles (dir, fileNames) {
       if (!res) return checkFinished()
 
       // ADD .min TO JS AND CSS FILES
-      // if (dir === 'assets' && fileName.match(/(\.js|\.css)$/)) rootFilePath = rootFilePath.replace(/\.js$/, '.min.js')
+      if (dir === 'assets' && fileName.match(/(\.js|\.css)$/) && fileName.indexOf('.min') < 0) rootFilePath = rootFilePath.replace(/\.js$/, '.min.js')
 
       fs.writeFile(rootFilePath, res, (err) => {
         if (err) {

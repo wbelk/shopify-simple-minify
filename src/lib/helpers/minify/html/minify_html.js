@@ -35,7 +35,7 @@ function loopTags (fileName, str, tagName, matchedTags, cb) {
 
     // IF TAG CONTAINS LIQUID, ABORT
     if (tag.match(/\{%.+%}/)) {
-      return checkFinished() 
+      return checkFinished()
     }
 
     let replaceTagRegex = new RegExp(`</*${tagName}>`, 'g')
