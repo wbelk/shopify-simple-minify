@@ -15,7 +15,7 @@ This is a simple Shopify theme minifier and module router that follows existing 
 - Minfying is awesome
 - Complex ES6 => ES5 compilers, routers, and bundlers make life harder, not easier. We're not building rockets, we're coding a (hopefully simple and ultra lightweight) Shopify theme.
 - If we could build every theme using raw javascript, we should. It's what Clint Eastwood would do... think about it.
-- Liquid is pretty handy, so we don't need to come up with some complex deal to replace what it already does.
+- Liquid is pretty handy, so we don't need to come up with a complex deal to replace what it already does.
 - Reliably minifying javascript + liquid is almost impossible (there is no npm pacakge for it, so that means it's a problem so hard that the community hasn't cracked it yet), so we need to start thinking about that in our code and trying to extract liquid from javascript as much as possible. That's what will maximize our potential to minify. A bit of architecture and patterns can go a long way.
 
 ## Local Requirements
@@ -39,21 +39,19 @@ Install this npm package.
 npm install --save-dev @wbelk/shopify-simple-minify
 ```
 
-Add the directory `minify_modules` to the root fo your project.
-
-Add the sub directories `./minify_modules/modules` and `./minify_modules/source_theme`
-
-Copy your existing Shopify theme to `./minify_modules/source_theme`
-
 Add a script to `package.json`:
 
 ```
 "minify": "node node_modules/@wbelk/shopify-simple-minify/src/index.js"
 ```
 
-`npm run minify` will watch for file changes and build on any new or change.
+`npm run minify` will build directories watch for file changes and build on any new or change.
 
-All contents of `./minify_modules/source_theme` will be minified/transpiled/compiled or copied over to Shopify theme directories in the root of the repo, i.e. `./minify_modules/source_theme/assets` => `./assets`
+Copy all (or parts) of your existing Shopify theme to `./minify_modules/source_theme`. For example, if you just want to minify a few files, create your Shopify directory like `./minify_modules/source_theme/snippets` and copy your selected snippets over, open the files and save, then they will be minified into `./snippets`.
+
+All contents of `./minify_modules/source_theme` will be minified/transpiled/compiled or copied over to Shopify theme directories in the root of the repo, i.e. `./minify_modules/source_theme/assets` => `./assets`.
+
+If you're copying files into `./minify_modules/source_theme` for the first time, you'll want to restart `npm run minify`.
 
 ## Modules
 
