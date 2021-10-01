@@ -8,7 +8,7 @@ function minfiySchema (str) {
   for (let schema of schemas) {
     // MULTIPLE SPACES
     let newSchema = schema.replace(/[\s\n\r]{2,}/g, '').replace(/(?<=["]:)\s(?=["\{\[])/g, '')    
-    str = str.replace(schema, newSchema)
+    str = str.replace(schema, () => newSchema)
   }
   
   return str

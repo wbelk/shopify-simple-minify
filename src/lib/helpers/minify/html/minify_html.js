@@ -38,14 +38,12 @@ function loopTags (fileName, str, tagName, matchedTags, cb) {
       return checkFinished() 
     }
 
-    let replaceTag = new RegExp(`</*${tagName}>`, 'g')
-    let tagContents = tag.replace(replaceTag, '')
-    console.log('replaceTag', replaceTag)
-    console.log('tagContents', tagContents)
+    let replaceTagRegex = new RegExp(`</*${tagName}>`, 'g')
+    let tagContents = tag.replace(replaceTagRegex, '')
 
     MinifyByTag[tagName](fileName, tagContents, (res) => {
       let newMinifiedTag = `<${tagName}>${res}</${tagName}>`
-      str = str.replace(tag, newMinifiedTag)
+      str = str.replace(tag, () => newMinifiedTag)
 
       checkFinished()
     })
