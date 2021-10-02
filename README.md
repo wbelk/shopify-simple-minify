@@ -2,19 +2,18 @@ Check out my Shopify apps: [https://apps.shopify.com/partners/william-belk](http
 
 ## Overview
 
-This is a simple Shopify theme minifier and module router that follows existing `.liquid` concepts like `include`, does not use Webpack. Changed files/modules will be watched and built automatically. This does not require a proxy and will play nicely with Themekit.
+This is a simple theme minifier, transpiler, and module router for Shopify that follows existing `.liquid` concepts like `include` and does not use Webpack. Changed files/modules will be watched and built automatically. This does not require a proxy and will play nicely with Themekit.
 
 - Minifiyer (js, css, html, liquid)
 - Liquid compressor (adds `{%- ... -%}` to liquid tags (except `assign` or `capture`))
-- Transpiler (ES6 => ES5) for files and any javascript that does not contain `liquid` tags
-- Simple module router using `{% minifiy_module 'stuff/myfile.html %}`
-- Watches for changes and rebuilds
+- Transpiler (ES6 => ES5) for files and any javascript inside of `<script>` tags that does not contain `liquid`
+- Simple module router using `{% minifiy_module 'stuff/myfile.html' %}`
+- Watches for changes and rebuilds (not so great for newly added files, might need restart occasionally)
 
 ## Assumptions
 
 - Minfying is awesome
 - Complex ES6 => ES5 compilers, routers, and bundlers make life harder, not easier. We're not building rockets, we're coding a (hopefully simple and ultra lightweight) Shopify theme.
-- If we could build every theme using raw javascript, we should. It's what Clint Eastwood would do... think about it.
 - Liquid is pretty handy, so we don't need to come up with a complex deal to replace what it already does.
 - Reliably minifying javascript + liquid is almost impossible (there is no npm pacakge for it, so that means it's a problem so hard that the community hasn't cracked it yet), so we need to start thinking about that in our code and trying to extract liquid from javascript as much as possible. That's what will maximize our potential to minify. A bit of architecture and patterns can go a long way.
 

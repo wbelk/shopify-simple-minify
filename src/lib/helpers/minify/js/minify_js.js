@@ -11,7 +11,7 @@ function minifyJS (fileName, str, cb) {
   const originalSize = new TextEncoder().encode(str).length
 
   // DON'T TRANSPILE IF CONTAINS JQUERY CODE, ONLY MINIFY
-  const noBabel = str.match(/\$\.|jquery|\$\(/i)
+  const noBabel = 0 //str.match(/\$\.|jquery|\$\(/i)
 
   const babelIt = function (cb) {
     if (noBabel) return cb()
