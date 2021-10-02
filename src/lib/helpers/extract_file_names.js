@@ -1,4 +1,4 @@
-const allowedRegex = /[^(\.min)]\.(liquid|js|css)$/
+const notAllowedRegex = /\.(min|scss)\.(liquid|js|css)$/
 
 function extractFileNames (dir, arr) {
   const res = {
@@ -8,7 +8,7 @@ function extractFileNames (dir, arr) {
   for (let fileName of arr) {
     if (dir === 'templates' && fileName === 'customers') continue
 
-    if (fileName.match(allowedRegex)) {
+    if (!fileName.match(notAllowedRegex)) {
       res.allowed.push(fileName)
       continue
     }

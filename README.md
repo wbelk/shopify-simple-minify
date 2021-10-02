@@ -61,8 +61,9 @@ Insert modules into other files using `{% minifiy_module 'stuff/myfile.html %}`.
 
 ## Important Notes
 
-- Any `js` or `css` in `/assets` will be outputted with `.min.js` or `.min.css`, so be sure to change your references to include `.min`
-- Any source assets from `minify_modules/source_theme` already containing `.min` will not be minified again, only copied over to the root `./assets` directory if new or changed.
+- Supported file types: `css, js, liquid`. Does not support `scss`
+- Any processed files will not be outputted with `.min`
+- Any source assets from `minify_modules/source_theme` already containing `.min` will not be minified again, only copied over new or changed.
 - To rebuild all files, either delete the file `./.minify_changelog` which is generated on build, or delete the root Shopify directories. If you need to prune old files, it's best to delete the root Shopify directories as this library does not track/handle deletions.
 
 ## Troubleshooting
