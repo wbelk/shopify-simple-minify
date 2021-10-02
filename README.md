@@ -1,5 +1,7 @@
 Check out my Shopify apps: [https://apps.shopify.com/partners/william-belk](https://apps.shopify.com/partners/william-belk)
 
+npm link for this package: [https://www.npmjs.com/package/@wbelk/shopify-simple-minify](https://www.npmjs.com/package/@wbelk/shopify-simple-minify)
+
 ## Overview
 
 This is a simple theme minifier, transpiler, and module router for Shopify that follows existing `.liquid` concepts like `include` and does not use Webpack. Changed files/modules will be watched and built automatically. This does not require a proxy and will play nicely with Themekit.
